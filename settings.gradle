@@ -1,0 +1,12 @@
+rootProject.name = "McExperience"
+
+include ':Common:Database'
+include ':Spigot:Database'
+include ':Spigot:Skill'
+include ':Spigot:Skill:Archery'
+include ':Spigot:Skill:Attack'
+include ':Spigot:Skill:Cooking'
+include ':Spigot:Skill:Fishing'
+include ':Spigot:Skill:Mining'
+include ':Spigot:Skill:Woodcutting'
+

@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.2.0'
+    }
+}
+
+group 'com.github.jhg023'
+
+project(':') {
+    task clean
+}
+
+subprojects {
+    apply plugin: 'com.github.johnrengelman.shadow'
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+
+    version '1.0.0'
+
+    sourceCompatibility = 14
+    targetCompatibility = 14
+
+    tasks.build.dependsOn tasks.shadowJar
+
+    shadowJar {
+        onlyIf { !project.sourceSets.main.allSource.files.isEmpty() }
+
+        archiveFileName = "${archiveBaseName.get()}-${archiveVersion.get()}.${archiveExtension.get()}"
+
+        doLast {
+            def parent = parent
+
+            while (parent != null && parent.parent != rootProject) {
+                parent = parent.parent
+            }
+
+            copy {
+                from "$buildDir/libs"
+                include '*.jar'
+                into "$rootDir/build/$parent.name/plugins"
+            }
+        }
+    }
+
+    shadowJar.finalizedBy clean
+
+    repositories {
+        mavenCentral()
+    }
+
+    compileJava {
+        doFirst {
+            options.compilerArgs = [ '--module-path', classpath.asPath ]
+            classpath = files()
+        }
+    }
+}

@@ -1,0 +1,10 @@
+api-version: '1.15'
+author: Jacob Glickman
+depend: [ Skill ]
+load: STARTUP
+name: Woodcutting
+description: The woodcutting skill plugin.
+main: com.github.jhg023.spigot.skill.woodcutting.Woodcutting
+prefix: Woodcutting
+version: 1.0.0
+website: https://github.com/jhg023

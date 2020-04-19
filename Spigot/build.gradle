@@ -1,0 +1,19 @@
+allprojects {
+    group 'com.github.jhg023.spigot'
+
+    repositories {
+        maven {
+            url = 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+        maven {
+            url = 'https://papermc.io/repo/repository/maven-public/'
+        }
+    }
+
+    dependencies {
+        compileOnly (group: 'com.destroystokyo.paper', name: 'paper-api', version: '1.15.1-R0.1-SNAPSHOT') {
+            transitive = false
+        }
+        compileOnly group: 'net.md-5', name: 'bungeecord-chat', version: '1.15-SNAPSHOT'
+    }
+}

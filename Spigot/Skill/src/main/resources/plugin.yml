@@ -1,0 +1,14 @@
+api-version: '1.15'
+author: Jacob Glickman
+commands:
+  track:
+    description: "Tracks skill progress at the top of your screen."
+    usage: "/track skill_name"
+depend: [ Database ]
+load: STARTUP
+name: Skill
+description: The parent plugin to individual skill plugins.
+main: com.github.jhg023.spigot.skill.SkillManager
+prefix: Skill
+version: 1.0.0
+website: https://github.com/jhg023

@@ -1,0 +1,10 @@
+api-version: '1.15'
+author: Jacob Glickman
+depend: [ Skill ]
+load: STARTUP
+name: Mining
+description: The mining skill plugin.
+main: com.github.jhg023.spigot.skill.mining.Mining
+prefix: Mining
+version: 1.0.0
+website: https://github.com/jhg023

@@ -1,0 +1,10 @@
+api-version: '1.15'
+author: Jacob Glickman
+depend: [ Skill ]
+load: STARTUP
+name: Attack
+description: The attack skill plugin.
+main: com.github.jhg023.spigot.skill.attack.Attack
+prefix: Attack
+version: 1.0.0
+website: https://github.com/jhg023

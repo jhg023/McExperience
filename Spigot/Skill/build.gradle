@@ -1,0 +1,9 @@
+dependencies {
+    compileOnly project(':Spigot:Database')
+}
+
+subprojects {
+    dependencies {
+        compileOnly project(':Spigot:Skill')
+    }
+}

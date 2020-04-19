@@ -1,0 +1,10 @@
+api-version: '1.15'
+author: Jacob Glickman
+depend: []
+load: STARTUP
+name: Database
+description: The database API that all Spigot plugins should use if they require a database.
+main: com.github.jhg023.spigot.database.Database
+prefix: Database
+version: 1.0.0
+website: https://github.com/jhg023
